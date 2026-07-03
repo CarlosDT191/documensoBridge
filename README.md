@@ -177,6 +177,7 @@ Using this information, the plugin performs the following sequence:
 6. Sends the signing invitation through Documenso.
 
 If the document lacks a valid tag, the signing workflow will not activate.
+
 ---
 
 ### Signature Coordinates
