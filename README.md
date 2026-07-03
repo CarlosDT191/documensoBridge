@@ -13,6 +13,7 @@ An open-source plugin for GLPI that seamlessly integrates with **Documenso** to 
 * [Installation](#installation)
 * [Configuration](#configuration)
 * [Usage Guide](#usage-guide)
+* [How the Plugin Works](#how-the-plugin-works)
 * [License](#license)
 
 ---
@@ -124,7 +125,7 @@ The API Key is securely stored by the plugin and is used for every request sent 
 
 ## Usage Guide
 
-The signing workflow must be completed manually according to the tag used.
+The signing workflow must be completed manually according to the tag used. The user has to go into the Documenso server to finish the workflow signing it.
 
 ### Signing by Requester
 
@@ -178,7 +179,7 @@ Using this information, the plugin performs the following sequence:
 If the document lacks a valid tag, the signing workflow will not activate.
 ---
 
-## Signature Coordinates
+### Signature Coordinates
 
 The signature field location is configurable from the GLPI administration panel.
 
@@ -188,41 +189,27 @@ This allows administrators to adapt the plugin to different document templates w
 
 ---
 
-## Security Considerations
+### Security Considerations
 
 * Sensitive connection information is stored in the `.env` file.
 * The Documenso API Key is managed from the plugin configuration.
-* Communication with Documenso should always use HTTPS.
 * Access to the plugin configuration should be restricted to GLPI administrators.
 
 ---
 
-## Error Handling
+### Error Handling
 
 The plugin validates several conditions before creating a signing request:
 
 * A supported tag must exist.
 * The ticket must contain the corresponding Requester or Observer.
 * The selected user must have a valid email address.
+* The Ticket must only have one Requester or Observer depending on the tag.
 * The Documenso server must be reachable.
 * A valid API Key must be configured.
 * Signature coordinates must be defined.
 
 If any validation fails, the signing process is aborted and the corresponding error is logged.
-
----
-
-## Future Improvements
-
-Possible future enhancements include:
-
-* Multiple signers per document.
-* Sequential signing workflows.
-* Multiple signature positions.
-* Support for additional GLPI user roles.
-* Automatic synchronization of signed documents back into the ticket.
-* Email notifications from GLPI.
-* Status tracking of signature requests.
 
 ---
 
