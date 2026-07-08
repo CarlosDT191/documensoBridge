@@ -94,13 +94,25 @@ Example:
 DOC_SERVER=https://documenso.example.com
 DOCUMENSO_CREATE=/api/v2/...
 DOCUMENSO_RECIPIENT=/api/v2/...
+DOC_RECIPIENT_MANY=/api/v2/...
 DOC_FIELD=/api/v2/...
+DOC_FIELD_MANY=/api/v2/...
 DOC_DISTRIBUTE=/api/v2/...
 ````
 
-The exact endpoint names may vary depending on the deployed version of Documenso.
-
 This separation allows infrastructure-related settings to remain outside the plugin configuration while simplifying deployment across different environments (development, staging and production).
+
+| Atributes            | Description                                                                    |
+| -------------------- | ------------------------------------------------------------------------------ |
+| DOC_SERVER           | Server domain name or IP address of the Documenso Server.                      |
+| DOCUMENSO_CREATE     | API endpoint for creating a new document.                                      |
+| DOCUMENSO_RECIPIENT  | API endpoint for adding a single recipient to a document.                      |
+| DOC_RECIPIENT_MANY   | API endpoint for adding multiple recipients to a document.                     |
+| DOC_FIELD            | API endpoint for adding a single signature field to a document.                |
+| DOC_FIELD_MANY       | API endpoint for adding multiple signature fields to a document.               |
+| DOC_DISTRIBUTE       | API endpoint for uploading and distributing the document after all recipients and signature fields have been configured.        |
+
+For more information about the Documenso API, see the official API documentation: https://openapi.documenso.com/
 
 ---
 
