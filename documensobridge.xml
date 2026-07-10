@@ -12,7 +12,6 @@
             <es>El plugin GLPI de documensobridge es útil para firmar documentos o albaranes con Documenso</es>
          </long>
       </description>
-      <homepage>https://magtel.es/</homepage>
       <authors>
          <author>Carlos</author>
          <author>De la Torre Frías</author>
@@ -28,9 +27,8 @@
          </version>
       </versions>
       <langs>
-         <lang>cs_CZ</lang>
+         <lang>es_ES</lang>
          <lang>en_GB</lang>
-         <lang>fr_FR</lang>
       </langs>
       <license>GPL v2+</license>
       <tags>
